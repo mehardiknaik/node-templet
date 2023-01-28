@@ -27,7 +27,7 @@ app.use("/api", router);
 
 // Start Server
 app.listen(port, () => {
-    console.log(`Server Connected to\x1b[93m http://localhost:${port}\x1b[0m`);
+  console.log(`Server Connected to\x1b[93m http://localhost:${port}\x1b[0m`);
 });
 
 // Error Handler
