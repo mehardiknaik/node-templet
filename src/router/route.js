@@ -1,12 +1,13 @@
 import { Router } from "express";
-import * as controller from '../controller/app.controller.js'
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "../../swagger.json" assert { type: "json" };
+import systmeRoutes from "./system.route.js";
 const router = Router();
 
-// Post Method
+router.use(systmeRoutes);
 
-// Get Method
-
-// Test API Routes
-router.route("/test").all(controller.test);
+if (process.env.NODE_ENV == "development") {
+  router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}
 
 export default router;
